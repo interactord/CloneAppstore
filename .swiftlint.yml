@@ -2,8 +2,8 @@ disabled_rules:
     - nesting
 
 included:
-    - RxVipKit
-    - RxVipKitTests
+    - CloneAppstore
+    - CloneAppstoreTest
 
 excluded:
     - Carthage

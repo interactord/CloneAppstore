@@ -12,6 +12,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
+  - SwiftLint (0.30.1)
   - Swinject (2.5.0)
 
 DEPENDENCIES:
@@ -20,9 +21,10 @@ DEPENDENCIES:
   - Nimble
   - Quick
   - Reveal-SDK
-  - RxCocoa
+  - RxCocoa (~> 4.0)
   - RxOptional
-  - RxSwift
+  - RxSwift (~> 4.0)
+  - SwiftLint
   - Swinject
 
 SPEC REPOS:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - RxCocoa
     - RxOptional
     - RxSwift
+    - SwiftLint
     - Swinject
 
 SPEC CHECKSUMS:
@@ -48,8 +51,9 @@ SPEC CHECKSUMS:
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
 
-PODFILE CHECKSUM: 0d18670ff06263979fbc413f98705c1802130db9
+PODFILE CHECKSUM: 781980c0749630f6f0c64ac4c839e19e570c354a
 
 COCOAPODS: 1.6.0.beta.2

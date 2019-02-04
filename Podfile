@@ -14,9 +14,12 @@ target 'CloneAppstore' do
   pod 'Himotoki'
   pod 'Alamofire'
 
+  # lint
+  pod 'SwiftLint'
+
   # Rx
-  pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
   pod 'RxOptional'
 
   # Debugger

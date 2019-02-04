@@ -8,11 +8,13 @@
 
 import UIKit
 
+class FeaturedListViewController: BaseViewController {
 
-class FeatureListViewController: BaseViewController {
+    var viewModel: FeaturedListViewModel?
+
+    // MARK: BaseContainer
 
     override func setupViews() {
-        super.setupViews()
         self.view.backgroundColor = .red
     }
 }

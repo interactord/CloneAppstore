@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private let container = NetworkContainer()
+    let disponseBag = DisposeBag()
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let viewController = FeatureListViewController()
+        let viewController = FeaturedListContainer(container: container.getChild()).resolve(serviceType: FeaturedListViewController.self)!
 
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
@@ -26,6 +32,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
 }
-
