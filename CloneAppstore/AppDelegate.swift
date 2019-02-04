@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let viewController = FeaturedListContainer(container: container.getChild()).resolve(serviceType: FeaturedListViewController.self)!
 
-        window?.rootViewController = viewController
+        window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
 
         return true

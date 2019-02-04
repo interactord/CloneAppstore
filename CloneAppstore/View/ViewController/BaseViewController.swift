@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaseViewController: UIViewController {
+
+    let bag = DisposeBag()
 
     // MARK: Initailizer
 
@@ -30,15 +33,12 @@ class BaseViewController: UIViewController {
     }
 
     func setupViews() {
-
     }
 
     func setupLayout() {
-
     }
 
     func setupBindings() {
-
     }
 
 }

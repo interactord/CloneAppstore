@@ -10,14 +10,14 @@ import Himotoki
 
 struct Featured {
     let bannerCategory: Category
-    let categories: Category
+    let categories: [Category]
 }
 
 extension Featured: Himotoki.Decodable {
     static func decode(_ extactor: Extractor) throws -> Featured {
         return try Featured(
             bannerCategory: extactor <| "bannerCategory",
-            categories: extactor <| "categories"
+            categories: extactor <|| "categories"
         )
     }
 }

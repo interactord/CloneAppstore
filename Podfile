@@ -7,6 +7,9 @@ target 'CloneAppstore' do
   # ignore all warnings from all pods
   inhibit_all_warnings!
 
+  # UI
+  pod 'SnapKit'
+
   # DI
   pod 'Swinject'
 
@@ -21,6 +24,7 @@ target 'CloneAppstore' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'RxOptional'
+  pod 'RxDataSources'
 
   # Debugger
   pod 'Reveal-SDK', :configurations => ['Debug']

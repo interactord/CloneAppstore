@@ -9,19 +9,43 @@
 import RxSwift
 import RxCocoa
 
-protocol FeaturedListViewModelInput {
+protocol FeaturedListViewModeling {
+    // MARK: Input
+    var startTrigger: PublishSubject<Void> { get }
+
+    // MARK: Output
+    var cellModels: Observable<[CategoryCellModeling]> { get }
 }
 
-protocol FeaturedListViewModelOutput {
-}
+class FeaturedListViewModel: FeaturedListViewModeling {
 
-class FeaturedListViewModel {
-    private let network: Network
-    private let apiService: ApiService
+    // MARK: Input
+    let startTrigger = PublishSubject<Void>()
 
+    // MARK: Output
+    var cellModels: Observable<[CategoryCellModeling]>
+    let bag = DisposeBag()
+
+    var network: Network?
+    var apiService: ApiService?
+    // MARK: Initializer
     init(network: Network, apiService: ApiService) {
         self.network = network
         self.apiService = apiService
-    }
 
+        let start = startTrigger
+            .flatMapLatest { _ in
+                apiService.getFeatureList()
+            }
+            .observeOn(MainScheduler.instance)
+            .share(replay: 1)
+
+        cellModels = start
+            .map { featured in
+                featured.categories.map { category in
+                    CategoryCellModel(category: category)
+                }
+            }
+
+    }
 }

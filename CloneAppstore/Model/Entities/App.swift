@@ -9,20 +9,20 @@
 import Himotoki
 
 struct App {
-    let id: Int // swiftlint:disable:this identifier_name
-    let name: String
-    let category: String
-    let price: Double
-    let imageName: String
+    var id: Int? // swiftlint:disable:this identifier_name
+    var name: String?
+    var category: String?
+    var price: Double?
+    var imageName: String
 }
 
 extension App: Himotoki.Decodable {
     static func decode(_ extractor: Extractor) throws -> App {
         return try App(
-            id: extractor <| "Id",
-            name: extractor <| "Name",
-            category: extractor <| "Category",
-            price: extractor <| "Price",
+            id: extractor <|? "Id",
+            name: extractor <|? "Name",
+            category: extractor <|? "Category",
+            price: extractor <|? "Price",
             imageName: extractor <| "ImageName"
         )
     }

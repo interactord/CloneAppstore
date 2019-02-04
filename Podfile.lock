@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.1)
+  - Differentiator (3.1.0)
   - Himotoki (3.2.0)
   - Nimble (7.3.3)
   - Quick (1.3.4)
@@ -7,11 +8,16 @@ PODS:
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxOptional (3.6.2):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
+  - SnapKit (4.2.0)
   - SwiftLint (0.30.1)
   - Swinject (2.5.0)
 
@@ -22,38 +28,46 @@ DEPENDENCIES:
   - Quick
   - Reveal-SDK
   - RxCocoa (~> 4.0)
+  - RxDataSources
   - RxOptional
   - RxSwift (~> 4.0)
+  - SnapKit
   - SwiftLint
   - Swinject
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Differentiator
     - Himotoki
     - Nimble
     - Quick
     - Reveal-SDK
     - RxAtomic
     - RxCocoa
+    - RxDataSources
     - RxOptional
     - RxSwift
+    - SnapKit
     - SwiftLint
     - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Himotoki: 2618fc6b939ad6d9b71c52c90fe210f54ea28167
   Nimble: 3b434b1e7d0a92603a13550a82880b0d952f518e
   Quick: f4f7f063c524394c73ed93ac70983c609805d481
   Reveal-SDK: 43206a57f575632fd304e85385cc259b5d359e32
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
 
-PODFILE CHECKSUM: 781980c0749630f6f0c64ac4c839e19e570c354a
+PODFILE CHECKSUM: 55ea54c2417841f0288e1a0599bd6ed624257ada
 
 COCOAPODS: 1.6.0.beta.2

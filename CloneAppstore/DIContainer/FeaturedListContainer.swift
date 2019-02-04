@@ -49,8 +49,8 @@ extension FeaturedListContainer {
         .inObjectScope(.container)
 
         container.register(FeaturedListViewController.self) { resolver in
-            let viewController = FeaturedListViewController()
-            viewController.viewModel = resolver.resolve(FeaturedListViewModel.self)
+            let viewModel = resolver.resolve(FeaturedListViewModel.self)!
+            let viewController = FeaturedListViewController.init(viewModel: viewModel)
             return viewController
         }
         .inObjectScope(.container)

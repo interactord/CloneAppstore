@@ -21,6 +21,8 @@ final class BaseNetwork: Network {
                 do {
                     return try D.decodeValue($0)
                 } catch {
+                    print(error)
+
                     throw NetworkError.incorrectDataReturned
                 }
         }
