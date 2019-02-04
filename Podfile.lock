@@ -1,3 +1,55 @@
-PODFILE CHECKSUM: 6a0347c001a526592a09f785dfcf5745747e0a5e
+PODS:
+  - Alamofire (4.8.1)
+  - Himotoki (3.2.0)
+  - Nimble (7.3.3)
+  - Quick (1.3.4)
+  - Reveal-SDK (20)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxOptional (3.6.2):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - Swinject (2.5.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Himotoki
+  - Nimble
+  - Quick
+  - Reveal-SDK
+  - RxCocoa
+  - RxOptional
+  - RxSwift
+  - Swinject
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Himotoki
+    - Nimble
+    - Quick
+    - Reveal-SDK
+    - RxAtomic
+    - RxCocoa
+    - RxOptional
+    - RxSwift
+    - Swinject
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Himotoki: 2618fc6b939ad6d9b71c52c90fe210f54ea28167
+  Nimble: 3b434b1e7d0a92603a13550a82880b0d952f518e
+  Quick: f4f7f063c524394c73ed93ac70983c609805d481
+  Reveal-SDK: 43206a57f575632fd304e85385cc259b5d359e32
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+
+PODFILE CHECKSUM: 0d18670ff06263979fbc413f98705c1802130db9
 
 COCOAPODS: 1.6.0.beta.2
