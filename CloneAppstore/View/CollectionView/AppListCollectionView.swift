@@ -37,7 +37,6 @@ class AppListCollectionView: BaseCollectionView {
     }
 
     override func registerCell() {
-        delegate = self
         register(AppCell.self, forCellWithReuseIdentifier: appCellId)
         register(CategoryBannerCell.self, forCellWithReuseIdentifier: appBannerCellId)
     }

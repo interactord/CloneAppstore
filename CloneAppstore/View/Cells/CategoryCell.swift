@@ -49,6 +49,7 @@ class CategoryCell: BaseCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let listView = AppListCollectionView(frame: .zero, collectionViewLayout: layout)
+        listView.delegate = listView
         listView.backgroundColor = .clear
         return listView
     }()

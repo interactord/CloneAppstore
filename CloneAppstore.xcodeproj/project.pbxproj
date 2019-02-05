@@ -29,6 +29,10 @@
 		294F8B7222083EA800647810 /* Featured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F8B7122083EA800647810 /* Featured.swift */; };
 		294F8B7522083EEB00647810 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F8B7422083EEB00647810 /* Category.swift */; };
 		294F8B7722083EF400647810 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F8B7622083EF400647810 /* App.swift */; };
+		295CF8522209D7F800AF5B1A /* LargeBannerCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CF8512209D7F800AF5B1A /* LargeBannerCellModel.swift */; };
+		295CF8542209F51E00AF5B1A /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CF8532209F51E00AF5B1A /* BannerCell.swift */; };
+		295CF8582209F85E00AF5B1A /* BannerListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CF8572209F85E00AF5B1A /* BannerListCollectionView.swift */; };
+		295CF85A2209FC7100AF5B1A /* LargeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295CF8592209FC7100AF5B1A /* LargeBannerCell.swift */; };
 		29B691E22208604300305311 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691E12208604300305311 /* ApiService.swift */; };
 		29B691E52208617100305311 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691E42208617100305311 /* Network.swift */; };
 		29B691E72208617900305311 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691E62208617900305311 /* NetworkError.swift */; };
@@ -80,6 +84,10 @@
 		294F8B7122083EA800647810 /* Featured.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Featured.swift; sourceTree = "<group>"; };
 		294F8B7422083EEB00647810 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		294F8B7622083EF400647810 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		295CF8512209D7F800AF5B1A /* LargeBannerCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBannerCellModel.swift; sourceTree = "<group>"; };
+		295CF8532209F51E00AF5B1A /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		295CF8572209F85E00AF5B1A /* BannerListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerListCollectionView.swift; sourceTree = "<group>"; };
+		295CF8592209FC7100AF5B1A /* LargeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBannerCell.swift; sourceTree = "<group>"; };
 		29B691E12208604300305311 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		29B691E42208617100305311 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		29B691E62208617900305311 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				294F2C9522087E9F00B037F2 /* BaseCollectionView.swift */,
+				295CF8572209F85E00AF5B1A /* BannerListCollectionView.swift */,
 				294F2C9322087E6400B037F2 /* FeaturedListCollectionView.swift */,
 				294F2CA32208A9AD00B037F2 /* AppListCollectionView.swift */,
 			);
@@ -186,6 +195,8 @@
 				294F2CA92208B2B000B037F2 /* CategoryBannerCell.swift */,
 				294F2C98220880ED00B037F2 /* CategoryCell.swift */,
 				294F2CA52208AA0600B037F2 /* AppCell.swift */,
+				295CF8532209F51E00AF5B1A /* BannerCell.swift */,
+				295CF8592209FC7100AF5B1A /* LargeBannerCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -223,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				29B691F222086A9100305311 /* FeaturedListViewModel.swift */,
+				295CF8512209D7F800AF5B1A /* LargeBannerCellModel.swift */,
 				294F2CA72208AA8600B037F2 /* AppCellModel.swift */,
 				294F2C902208797200B037F2 /* CategoryCellModel.swift */,
 			);
@@ -557,9 +569,11 @@
 				29B691F322086A9100305311 /* FeaturedListViewModel.swift in Sources */,
 				29B691EF2208684600305311 /* BaseApiService.swift in Sources */,
 				294F2CA82208AA8600B037F2 /* AppCellModel.swift in Sources */,
+				295CF8542209F51E00AF5B1A /* BannerCell.swift in Sources */,
 				29B691E52208617100305311 /* Network.swift in Sources */,
 				29B691E9220864D500305311 /* NetworkMethod.swift in Sources */,
 				294F2CA42208A9AD00B037F2 /* AppListCollectionView.swift in Sources */,
+				295CF8582209F85E00AF5B1A /* BannerListCollectionView.swift in Sources */,
 				294F8B7222083EA800647810 /* Featured.swift in Sources */,
 				294F2CA62208AA0600B037F2 /* AppCell.swift in Sources */,
 				294F2C9422087E6400B037F2 /* FeaturedListCollectionView.swift in Sources */,
@@ -568,6 +582,8 @@
 				29B691ED2208682900305311 /* ApiLIst.swift in Sources */,
 				294F2C9E2208860000B037F2 /* Observable+Ext.swift in Sources */,
 				294F2C9622087E9F00B037F2 /* BaseCollectionView.swift in Sources */,
+				295CF8522209D7F800AF5B1A /* LargeBannerCellModel.swift in Sources */,
+				295CF85A2209FC7100AF5B1A /* LargeBannerCell.swift in Sources */,
 				290CC4A82208370A00C47C48 /* AppDelegate.swift in Sources */,
 				294F2C912208797200B037F2 /* CategoryCellModel.swift in Sources */,
 				294F8B7022083D2100647810 /* BaseContainer.swift in Sources */,

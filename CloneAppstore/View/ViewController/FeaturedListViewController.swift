@@ -58,10 +58,9 @@ class FeaturedListViewController: BaseViewController {
             .bind(to: viewModel.startTrigger)
             .disposed(by: bag)
 
-        viewModel.cellModels
-            .bind(to: baseView.rx.items(cellIdentifier: baseView.categoriCellId, cellType: CategoryCell.self)) { _, model, cell in
-                cell.viewModel = model
-        }.disposed(by: bag)
+        viewModel.items
+            .bind(to: baseView.rx.items(dataSource: baseView.source))
+            .disposed(by: bag)
     }
 
 }
