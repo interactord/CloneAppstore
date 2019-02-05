@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 import RxDataSources
 
 protocol CategoryCellModeling {
@@ -14,7 +15,7 @@ protocol CategoryCellModeling {
     var category: Category { get }
 
     // MARK: Output
-    var sectionModel: Observable<[AppCellModel]> { get }
+    var items: BehaviorRelay<[CategorySectionModel]> { get }
 }
 
 class CategoryCellModel: CategoryCellModeling {
@@ -24,22 +25,23 @@ class CategoryCellModel: CategoryCellModeling {
     let category: Category
 
     // Output
-    var sectionModel: Observable<[AppCellModel]>
+    var items = BehaviorRelay<[CategorySectionModel]>(value: [])
 
     init(category: Category) {
         self.category = category
 
-        let apps = Observable<[App]>.create { observer in
-            observer.onNext(category.apps)
-            observer.onCompleted()
-            return Disposables.create()
-        }
+        let appSectionItems = category
+            .apps
+            .filter { $0.name != nil }
+            .map { CategoryItem.app(cellModel: AppCellModel(app: $0)) }
 
-        sectionModel = apps.map { apps in
-            apps.map { app in
-                AppCellModel(app: app)
-            }
-        }
+        let bannerSectionItems = category
+            .apps
+            .filter { $0.name == nil }
+            .map { CategoryItem.banner(cellModel: AppCellModel(app: $0)) }
 
+        let section = CategorySectionModel(model: .apps, items: appSectionItems + bannerSectionItems)
+
+        items.accept([section])
     }
 }

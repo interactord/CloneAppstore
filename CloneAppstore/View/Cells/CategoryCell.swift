@@ -22,14 +22,12 @@ class CategoryCell: BaseCell {
             guard let viewModel = viewModel else { return }
             nameLabel.text = viewModel.category.name
 
-            viewModel
-                .sectionModel
-                .bind(to: baseView.rx.items(cellIdentifier: "appCellId", cellType: AppCell.self)) { _, model, cell in
-                    cell.viewModel = model
-                }
-//            viewModel.sectionModel
-//                .bind(to: baseView.rx.items(dataSource: CategoryCellModel.dataSource()))
-//                .disposed(by: bag)
+            viewModel.items
+                .asDriver()
+                .drive(baseView.rx.items(dataSource: baseView.source))
+                .disposed(by: bag)
+
+            self.bag = bag
         }
     }
 
@@ -57,6 +55,7 @@ class CategoryCell: BaseCell {
 
     override func setupViews() {
         super.setupViews()
+
         addSubview(nameLabel)
         addSubview(baseView)
         addSubview(dividerView)

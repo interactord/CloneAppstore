@@ -33,7 +33,8 @@ class CategoryBannerCell: BaseCell {
 
     override func setupLayout() {
         imageView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalTo(self)
+            make.top.right.left.equalTo(self)
+            make.bottom.equalTo(self).offset(-20)
         }
     }
 }

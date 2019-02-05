@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxDataSources
 import SnapKit
 
 final class AppCell: BaseCell {
@@ -71,6 +72,7 @@ final class AppCell: BaseCell {
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(self.snp.width)
             make.top.equalTo(self.snp.top).offset(0)
+            make.centerX.equalTo(self)
         }
 
         nameLabel.snp.makeConstraints { make in
@@ -91,5 +93,4 @@ final class AppCell: BaseCell {
             make.height.equalTo(20)
         }
     }
-
 }
