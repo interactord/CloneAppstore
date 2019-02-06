@@ -19,7 +19,7 @@ final class FeaturedListContainer {
     }
 }
 
-// BaseContainer
+// MARK: BaseContainer
 
 extension FeaturedListContainer: BaseContainer {
     func getChild() -> Container {
@@ -39,20 +39,38 @@ extension FeaturedListContainer: BaseContainer {
 
 extension FeaturedListContainer {
     private func register() {
+
         container.register(FeaturedListViewModel.self) { resolver in
-            let viewModel = FeaturedListViewModel(
-                network: resolver.resolve(Network.self)!,
-                apiService: resolver.resolve(ApiService.self)!
-            )
+
+            let service = resolver.resolve(Service.self)!
+
+            let viewModel = FeaturedListViewModel(service: service)
             return viewModel
         }
-        .inObjectScope(.container)
+            .inObjectScope(.container)
 
         container.register(FeaturedListViewController.self) { resolver in
             let viewModel = resolver.resolve(FeaturedListViewModel.self)!
             let viewController = FeaturedListViewController.init(viewModel: viewModel)
             return viewController
         }
-        .inObjectScope(.container)
+            .inObjectScope(.container)
+    }
+}
+
+// MARK: Public
+extension FeaturedListContainer {
+    func getViewController() -> FeaturedListViewController {
+        let viewController = container.resolve(FeaturedListViewController.self)!
+        return viewController
+    }
+
+    func getViewModel() -> FeaturedListViewModel {
+        let viewModel = container.resolve(FeaturedListViewModel.self)!
+        return viewModel
+    }
+
+    func getService() -> Service {
+        return container.resolve(Service.self)!
     }
 }

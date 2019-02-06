@@ -25,18 +25,14 @@ class FeaturedListViewModel: FeaturedListViewModeling {
     // MARK: Output
     var items: Observable<[FeaturedSectionModel]>
 
-    // MARK: Injection
-    var network: Network?
-    var apiService: ApiService?
+    typealias Service = HasApiProvider
 
     // MARK: Initializer
-    init(network: Network, apiService: ApiService) {
-        self.network = network
-        self.apiService = apiService
+    init(service: Service) {
 
         let start = startTrigger
             .flatMapLatest { _ in
-                apiService.getFeatureList()
+                service.apiProvider.getFeatureList()
             }
             .observeOn(MainScheduler.instance)
             .share(replay: 1)

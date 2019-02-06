@@ -9,12 +9,15 @@
 import UIKit
 import RxSwift
 import Swinject
+import RxFlow
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private let container = NetworkContainer()
-    let disponseBag = DisposeBag()
+    private let container = ServiceContainer()
+    private let coordinator = FlowCoordinator()
+    private let bag = DisposeBag()
+
     var window: UIWindow?
 
     func application(
@@ -24,10 +27,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let viewController = FeaturedListContainer(container: container.getChild()).resolve(serviceType: FeaturedListViewController.self)!
+        guard let window = self.window else { return false }
 
-        window?.rootViewController = UINavigationController(rootViewController: viewController)
-        window?.makeKeyAndVisible()
+        self.coordinator
+            .rx
+            .willNavigate
+            .subscribe(onNext: { flow, step in
+                print ("will navigate to flow=\(flow) and step=\(step)")
+            }).disposed(by: bag)
+
+        self.coordinator
+            .rx
+            .didNavigate
+            .subscribe(onNext: { flow, step in
+                print ("did navigate to flow=\(flow) and step=\(step)")
+            }).disposed(by: bag)
+
+        let appFlow = AppFlow(container: container)
+
+        Flows.whenReady(flow1: appFlow) { root in
+            window.rootViewController = root
+            window.makeKeyAndVisible()
+        }
+
+        let appStepper = AppStepper(service: container.getService())
+
+        self.coordinator.coordinate(flow: appFlow, with: appStepper)
 
         return true
     }

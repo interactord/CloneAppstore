@@ -13,5 +13,6 @@ protocol HasApiProvider {
 }
 
 protocol ApiProvider {
+
     func getFeatureList() -> Observable<Featured>
 }

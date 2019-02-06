@@ -8,7 +8,7 @@
 
 import Swinject
 
-final class NetworkContainer: BaseContainer {
+final class ServiceContainer: BaseContainer {
     private let container: Container
 
     // MARK: Initializer
@@ -18,21 +18,7 @@ final class NetworkContainer: BaseContainer {
         register()
     }
 
-    private func register() {
-
-        container.register(Networking.self) { _ in
-            let network = Network()
-            return network
-        }.inObjectScope(.container)
-
-        container.register(ApiProvider.self) { resolver in
-            let network = resolver.resolve(Networking.self)!
-            let apiProvider = ApiNetworkProvider(network: network)
-            return apiProvider
-        }.inObjectScope(.container)
-    }
-
-    // BaseContainer
+    // MARK: BaseContainer
 
     func getChild() -> Container {
         return Container(parent: container)
@@ -46,4 +32,46 @@ final class NetworkContainer: BaseContainer {
         return container.resolve(serviceType, name: name)
     }
 
+}
+
+// MARK: Private Method
+
+extension ServiceContainer {
+    private func register() {
+        container.register(Networking.self) { _ in
+            let network = Network()
+            return network
+        }.inObjectScope(.container)
+
+        container.register(ApiProvider.self) { resolver in
+            let network = resolver.resolve(Networking.self)!
+            let apiProvier = ApiNetworkProvider(network: network)
+            return apiProvier
+        }.inObjectScope(.container)
+
+        container.register(PreperenceProvider.self) { _ in
+            let preperenceProvider = PreperenceUserDefaultProvider()
+            return preperenceProvider
+        }.inObjectScope(.container)
+
+        container.register(Service.self) { resolver in
+            let apiProvider = resolver.resolve(ApiProvider.self)!
+            let preperenceProvider = resolver.resolve(PreperenceProvider.self)!
+
+            let service = Service(
+                apiProvider: apiProvider,
+                preperenceProvider: preperenceProvider
+            )
+            return service
+        }.inObjectScope(.container)
+    }
+
+}
+
+// MARK: Public Method
+
+extension ServiceContainer {
+    func getService() -> Service {
+        return container.resolve(Service.self)!
+    }
 }

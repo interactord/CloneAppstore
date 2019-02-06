@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol HasPreperenceProvider {
     var preperenceProvider: PreperenceProvider { get }
 }
 
 protocol PreperenceProvider {
-    func setOnBoard()
-    func setNotOnBoard()
-    func isOnBoarded() -> Bool
+    func setOnStart()
+    func setNotOnStart()
+    func isOnStarted() -> Observable<Bool>
 }

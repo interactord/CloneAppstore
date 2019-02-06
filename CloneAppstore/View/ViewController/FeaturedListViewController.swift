@@ -10,14 +10,18 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import RxFlow
 
-class FeaturedListViewController: BaseViewController {
+class FeaturedListViewController: BaseViewController, Stepper {
 
     var viewModel: FeaturedListViewModeling
+
+    let steps = PublishRelay<Step>()
 
     let baseView: FeaturedListCollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = FeaturedListCollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.delegate = collectionView
         collectionView.backgroundColor = .clear
         return collectionView
     }()
@@ -31,11 +35,6 @@ class FeaturedListViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationItem.title = "Featured"
-    }
-
     // MARK: BaseContainer
 
     override func setupViews() {
@@ -47,7 +46,7 @@ class FeaturedListViewController: BaseViewController {
     override func setupLayout() {
         super.setupLayout()
         baseView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalTo(self.view)
+            make.top.right.bottom.left.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
 

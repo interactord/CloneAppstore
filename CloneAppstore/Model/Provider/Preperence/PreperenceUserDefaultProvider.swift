@@ -11,19 +11,22 @@ import RxSwift
 
 class PreperenceUserDefaultProvider: PreperenceProvider {
 
-    private let onBoard = "onBoard"
+    private let start = "start"
     private let defaults = UserDefaults.standard
 
-    func setOnBoard() {
-        defaults.set(true, forKey: onBoard)
+    func setOnStart() {
+        defaults.set(true, forKey: start)
     }
 
-    func setNotOnBoard() {
-        defaults.removeObject(forKey: onBoard)
+    func setNotOnStart() {
+        defaults.removeObject(forKey: start)
     }
 
-    func isOnBoarded() -> Bool {
-        return defaults.bool(forKey: onBoard)
+    func isOnStarted() -> Observable<Bool> {
+        return UserDefaults.standard
+            .rx
+            .observe(Bool.self, start)
+            .map { $0 ?? false }
     }
 
 }

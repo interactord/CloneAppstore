@@ -25,6 +25,8 @@ target 'CloneAppstore' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'RxOptional'
   pod 'RxDataSources'
+  pod 'RxFlow'
+
 
   # Debugger
   pod 'Reveal-SDK', :configurations => ['Debug']

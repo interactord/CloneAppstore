@@ -42,7 +42,6 @@ final class FeaturedListCollectionView: BaseCollectionView {
 
     override func registerCell() {
         super.registerCell()
-        delegate = self
         register(CategoryCell.self, forCellWithReuseIdentifier: categoriCellId)
         register(BannerCell.self, forCellWithReuseIdentifier: largeBannerCellId)
     }

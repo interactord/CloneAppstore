@@ -54,14 +54,6 @@ extension BannerListCollectionView {
 extension BannerListCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let item = source[indexPath]
-        switch item {
-        case .banner:
-            return CGSize(width: 300, height: frame.height)
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 14, left: 0, bottom: 14, right: 0)
+        return CGSize(width: 300, height: frame.height)
     }
 }

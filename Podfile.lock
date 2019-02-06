@@ -12,6 +12,9 @@ PODS:
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
+  - RxFlow (2.0.0):
+    - RxCocoa (>= 4.4.0)
+    - RxSwift (>= 4.4.0)
   - RxOptional (3.6.2):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
@@ -29,6 +32,7 @@ DEPENDENCIES:
   - Reveal-SDK
   - RxCocoa (~> 4.0)
   - RxDataSources
+  - RxFlow
   - RxOptional
   - RxSwift (~> 4.0)
   - SnapKit
@@ -46,6 +50,7 @@ SPEC REPOS:
     - RxAtomic
     - RxCocoa
     - RxDataSources
+    - RxFlow
     - RxOptional
     - RxSwift
     - SnapKit
@@ -62,12 +67,13 @@ SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxFlow: f0212025e3747431b3be09c6be04bfde0a3bf5a4
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
 
-PODFILE CHECKSUM: 55ea54c2417841f0288e1a0599bd6ed624257ada
+PODFILE CHECKSUM: 783482aaecdaea19e47fd42748a503a5e79be5d2
 
 COCOAPODS: 1.6.0.beta.2

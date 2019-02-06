@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct AppService: HasApiProvider, HasPreperenceProvider {
-    var apiProvider: ApiProvider
+struct Service: HasApiProvider, HasPreperenceProvider {
+    let apiProvider: ApiProvider
 
-    var preperenceProvider: PreperenceProvider
+    let preperenceProvider: PreperenceProvider
 
     init(apiProvider: ApiProvider, preperenceProvider: PreperenceProvider) {
         self.apiProvider = apiProvider

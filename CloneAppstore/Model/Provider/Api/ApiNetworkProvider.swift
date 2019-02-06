@@ -9,6 +9,7 @@
 import RxSwift
 
 class ApiNetworkProvider: ApiProvider {
+
     private let network: Networking
 
     init(network: Networking) {

@@ -43,8 +43,10 @@ class BannerCell: BaseCell {
     }
 
     override func setupLayout() {
+        self.autoresizesSubviews = false
         baseView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalTo(self)
+            make.top.right.right.left.equalTo(self)
+            make.bottom.equalTo(self)
         }
     }
 }
