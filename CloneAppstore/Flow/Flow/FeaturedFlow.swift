@@ -9,7 +9,7 @@
 import RxFlow
 import UIKit.UINavigationController
 
-class FeaturedListFlow: Flow {
+class FeaturedFlow: Flow {
 
     var root: Presentable {
         return self.rootViewController
@@ -38,6 +38,8 @@ class FeaturedListFlow: Flow {
         switch step {
         case .featuredListComplete:
             return navigationToFeaturedList()
+        case .appDetail(let app):
+            return navigationToAppDetailList(app: app)
         default:
             return .none
         }
@@ -46,11 +48,25 @@ class FeaturedListFlow: Flow {
 
 // MARK: Private Method
 
-extension FeaturedListFlow {
+extension FeaturedFlow {
     private func navigationToFeaturedList() -> FlowContributors {
         let viewController = container.getViewController()
         viewController.title = "Featured"
 
+        self.rootViewController.pushViewController(viewController, animated: true)
+
+        let contributor = FlowContributor.contribute(
+            withNextPresentable: viewController,
+            withNextStepper: viewController
+        )
+
+        return .one(flowContributor: contributor)
+    }
+
+    private func navigationToAppDetailList(app: App) -> FlowContributors {
+        let detailAppContainer = DetailAppContainer(container: container.getChild())
+
+        let viewController: DetailAppViewController = detailAppContainer.getViewController()
         self.rootViewController.pushViewController(viewController, animated: true)
 
         let contributor = FlowContributor.contribute(

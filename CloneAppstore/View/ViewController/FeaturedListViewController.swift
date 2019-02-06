@@ -40,6 +40,7 @@ class FeaturedListViewController: BaseViewController, Stepper {
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = .white
+        baseView.praretViewController = self
         view.addSubview(baseView)
     }
 

@@ -15,6 +15,7 @@ protocol FeaturedListViewModeling {
 
     // MARK: Output
     var items: Observable<[FeaturedSectionModel]> { get }
+    var itemSelected: PublishRelay<App> { get }
 }
 
 class FeaturedListViewModel: FeaturedListViewModeling {
@@ -24,11 +25,13 @@ class FeaturedListViewModel: FeaturedListViewModeling {
 
     // MARK: Output
     var items: Observable<[FeaturedSectionModel]>
-
+    var itemSelected: PublishRelay<App>
     typealias Service = HasApiProvider
 
     // MARK: Initializer
     init(service: Service) {
+
+        let itemSelected = PublishRelay<App>()
 
         let start = startTrigger
             .flatMapLatest { _ in
@@ -50,5 +53,15 @@ class FeaturedListViewModel: FeaturedListViewModeling {
 
                 return [bannerSection, categorySection]
         }
+
+        let bag = DisposeBag()
+        self.itemSelected = itemSelected
+        self.itemSelected.subscribe(onNext: { app in
+            print(app)
+        }, onError: { error in
+            print(error)
+        }, onCompleted: {
+            print("끝")
+        }).disposed(by: bag)
     }
 }

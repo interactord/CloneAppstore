@@ -38,9 +38,13 @@ class CategoryCellModel: CategoryCellModeling {
         let bannerSectionItems = category
             .apps
             .filter { $0.name == nil }
-            .map { CategoryItem.banner(cellModel: AppCellModel(app: $0)) }
+            .map {
+                CategoryItem.banner(cellModel: AppCellModel(app: $0)) }
 
-        let section = CategorySectionModel(model: .apps, items: appSectionItems + bannerSectionItems)
+        let section = CategorySectionModel(
+            model: .apps,
+            items: appSectionItems + bannerSectionItems
+        )
 
         items.accept([section])
     }

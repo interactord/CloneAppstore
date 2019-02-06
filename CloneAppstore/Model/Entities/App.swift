@@ -14,6 +14,14 @@ struct App {
     var category: String?
     var price: Double?
     var imageName: String
+
+    init(id: Int? = nil, name: String? = nil, category: String? = nil, price: Double? = nil, imageName: String) { // swiftlint:disable:this identifier_name
+        self.id = id
+        self.name = name
+        self.category = category
+        self.price = price
+        self.imageName = imageName
+    }
 }
 
 extension App: Himotoki.Decodable {

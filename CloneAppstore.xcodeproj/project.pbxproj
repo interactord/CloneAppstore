@@ -40,7 +40,7 @@
 		29AB665F220AEC020058E2BE /* BaseStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB665E220AEC020058E2BE /* BaseStep.swift */; };
 		29AB6661220AECA90058E2BE /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB6660220AECA90058E2BE /* AppStepper.swift */; };
 		29AB6666220AF72B0058E2BE /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB6665220AF72B0058E2BE /* AppFlow.swift */; };
-		29AB6668220AFED90058E2BE /* FeaturedListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB6667220AFED90058E2BE /* FeaturedListFlow.swift */; };
+		29AB6668220AFED90058E2BE /* FeaturedFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB6667220AFED90058E2BE /* FeaturedFlow.swift */; };
 		29B691E22208604300305311 /* ApiNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691E12208604300305311 /* ApiNetworkProvider.swift */; };
 		29B691E72208617900305311 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691E62208617900305311 /* NetworkError.swift */; };
 		29B691E9220864D500305311 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691E8220864D500305311 /* NetworkMethod.swift */; };
@@ -48,6 +48,9 @@
 		29B691ED2208682900305311 /* ApiLIst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691EC2208682900305311 /* ApiLIst.swift */; };
 		29B691F1220869C100305311 /* FeaturedListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691F0220869C100305311 /* FeaturedListContainer.swift */; };
 		29B691F322086A9100305311 /* FeaturedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B691F222086A9100305311 /* FeaturedListViewModel.swift */; };
+		29D13B0A220B0F4A00B5A01A /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B09220B0F4A00B5A01A /* OptionalType.swift */; };
+		29D13B0C220B2AB200B5A01A /* DetailAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B0B220B2AB200B5A01A /* DetailAppViewController.swift */; };
+		29D13B0E220B2AE600B5A01A /* DetailAppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B0D220B2AE600B5A01A /* DetailAppContainer.swift */; };
 		2F2500DF4C6BE129F3F1DC80 /* Pods_CloneAppstore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641343721E87AD64B4EE272B /* Pods_CloneAppstore.framework */; };
 		7EE41EDF3BB45AFE53FC5691 /* Pods_CloneAppstoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8884212CF27879CB284D14 /* Pods_CloneAppstoreTests.framework */; };
 /* End PBXBuildFile section */
@@ -101,7 +104,7 @@
 		29AB665E220AEC020058E2BE /* BaseStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStep.swift; sourceTree = "<group>"; };
 		29AB6660220AECA90058E2BE /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
 		29AB6665220AF72B0058E2BE /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
-		29AB6667220AFED90058E2BE /* FeaturedListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedListFlow.swift; sourceTree = "<group>"; };
+		29AB6667220AFED90058E2BE /* FeaturedFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedFlow.swift; sourceTree = "<group>"; };
 		29B691E12208604300305311 /* ApiNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetworkProvider.swift; sourceTree = "<group>"; };
 		29B691E62208617900305311 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		29B691E8220864D500305311 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
@@ -109,6 +112,9 @@
 		29B691EC2208682900305311 /* ApiLIst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLIst.swift; sourceTree = "<group>"; };
 		29B691F0220869C100305311 /* FeaturedListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedListContainer.swift; sourceTree = "<group>"; };
 		29B691F222086A9100305311 /* FeaturedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedListViewModel.swift; sourceTree = "<group>"; };
+		29D13B09220B0F4A00B5A01A /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
+		29D13B0B220B2AB200B5A01A /* DetailAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppViewController.swift; sourceTree = "<group>"; };
+		29D13B0D220B2AE600B5A01A /* DetailAppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppContainer.swift; sourceTree = "<group>"; };
 		356DA156D95BAE20DF79425B /* Pods-CloneAppstore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneAppstore.debug.xcconfig"; path = "Target Support Files/Pods-CloneAppstore/Pods-CloneAppstore.debug.xcconfig"; sourceTree = "<group>"; };
 		641343721E87AD64B4EE272B /* Pods_CloneAppstore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneAppstore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8884212CF27879CB284D14 /* Pods_CloneAppstoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneAppstoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				294F2C9D2208860000B037F2 /* Observable+Ext.swift */,
+				29D13B09220B0F4A00B5A01A /* OptionalType.swift */,
 				294F2CA122089CEE00B037F2 /* UIViewController+Ext.swift */,
 			);
 			path = Utility;
@@ -259,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				294F8B64220837FC00647810 /* FeaturedListViewController.swift */,
+				29D13B0B220B2AB200B5A01A /* DetailAppViewController.swift */,
 				294F8B662208384E00647810 /* BaseViewController.swift */,
 			);
 			path = ViewController;
@@ -270,6 +278,7 @@
 				294F8B6F22083D2100647810 /* BaseContainer.swift */,
 				294F8B6D22083CD500647810 /* ServiceContainer.swift */,
 				29B691F0220869C100305311 /* FeaturedListContainer.swift */,
+				29D13B0D220B2AE600B5A01A /* DetailAppContainer.swift */,
 			);
 			path = DIContainer;
 			sourceTree = "<group>";
@@ -342,7 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				29AB6665220AF72B0058E2BE /* AppFlow.swift */,
-				29AB6667220AFED90058E2BE /* FeaturedListFlow.swift */,
+				29AB6667220AFED90058E2BE /* FeaturedFlow.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -645,7 +654,7 @@
 				29B691F322086A9100305311 /* FeaturedListViewModel.swift in Sources */,
 				294F2CA82208AA8600B037F2 /* AppCellModel.swift in Sources */,
 				295CF8542209F51E00AF5B1A /* BannerCell.swift in Sources */,
-				29AB6668220AFED90058E2BE /* FeaturedListFlow.swift in Sources */,
+				29AB6668220AFED90058E2BE /* FeaturedFlow.swift in Sources */,
 				29AB665F220AEC020058E2BE /* BaseStep.swift in Sources */,
 				29AB6652220ACC970058E2BE /* ApiProvider.swift in Sources */,
 				29B691E9220864D500305311 /* NetworkMethod.swift in Sources */,
@@ -669,9 +678,12 @@
 				29AB6661220AECA90058E2BE /* AppStepper.swift in Sources */,
 				29AB665A220AD1210058E2BE /* PreperenceUserDefaultProvider.swift in Sources */,
 				29B691EB2208650E00305311 /* Network.swift in Sources */,
+				29D13B0C220B2AB200B5A01A /* DetailAppViewController.swift in Sources */,
 				294F2CAA2208B2B000B037F2 /* CategoryBannerCell.swift in Sources */,
 				294F2C99220880ED00B037F2 /* CategoryCell.swift in Sources */,
+				29D13B0A220B0F4A00B5A01A /* OptionalType.swift in Sources */,
 				29AB6655220ACDDD0058E2BE /* Service.swift in Sources */,
+				29D13B0E220B2AE600B5A01A /* DetailAppContainer.swift in Sources */,
 				294F8B7722083EF400647810 /* App.swift in Sources */,
 				294F8B672208384E00647810 /* BaseViewController.swift in Sources */,
 				294F2C9B220880FB00B037F2 /* BaseCell.swift in Sources */,

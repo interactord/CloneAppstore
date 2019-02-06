@@ -57,7 +57,7 @@ class AppFlow: Flow {
 extension AppFlow {
     func navigationToFeaturedList() -> FlowContributors {
         let featuredListContainer = FeaturedListContainer(container: container.getChild())
-        let flow = FeaturedListFlow(container: featuredListContainer)
+        let flow = FeaturedFlow(container: featuredListContainer)
 
         Flows.whenReady(flow1: flow) { [unowned self] root in
             self.rootViewController.present(root, animated: true, completion: nil)

@@ -15,6 +15,7 @@ import SnapKit
 class CategoryCell: BaseCell {
 
     private var bag: DisposeBag?
+    var parentViewController: FeaturedListViewController?
 
     var viewModel: CategoryCellModeling? {
         didSet {
@@ -25,6 +26,21 @@ class CategoryCell: BaseCell {
             viewModel.items
                 .asDriver()
                 .drive(baseView.rx.items(dataSource: baseView.source))
+                .disposed(by: bag)
+
+            baseView
+                .rx
+                .itemSelected
+                .map {
+                    self.baseView.cellForItem(at: $0) as? AppCell
+                }
+                .ignoreNil()
+                .map { $0.viewModel?.app }
+                .ignoreNil()
+                .subscribe(onNext: { app in
+                     print ("did step call to \(type(of: self)): \(#function)")
+                    self.parentViewController?.steps.accept(BaseStep.appDetail(app: app))
+                })
                 .disposed(by: bag)
 
             self.bag = bag

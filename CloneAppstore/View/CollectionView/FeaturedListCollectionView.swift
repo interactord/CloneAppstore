@@ -28,6 +28,8 @@ final class FeaturedListCollectionView: BaseCollectionView {
     private let categoriCellId = "categoryCellId"
     private let largeBannerCellId = "largeBannerCellId"
 
+    var praretViewController: FeaturedListViewController?
+
     lazy var source = RxCollectionViewSectionedReloadDataSource<FeaturedSectionModel>(configureCell: configureCell)
 
     lazy var configureCell: RxCollectionViewSectionedReloadDataSource<FeaturedSectionModel>.ConfigureCell = { [weak self] _, _, indexPath, item in
@@ -51,6 +53,7 @@ extension FeaturedListCollectionView {
     private func categoryCell(indexPath: IndexPath, viewModel: CategoryCellModeling) -> UICollectionViewCell {
         if let cell = dequeueReusableCell(withReuseIdentifier: categoriCellId, for: indexPath) as? CategoryCell {
             cell.viewModel = viewModel
+            cell.parentViewController = praretViewController
             return cell
         }
         return UICollectionViewCell()
