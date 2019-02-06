@@ -1,5 +1,5 @@
 //
-//  BaseApiService.swift
+//  APIService.swift
 //  CloneAppstore
 //
 //  Created by SANGBONG MOON on 04/02/2019.
@@ -8,10 +8,10 @@
 
 import RxSwift
 
-class BaseApiService: ApiService {
-    private let network: Network
+class ApiNetworkProvider: ApiProvider {
+    private let network: Networking
 
-    init(network: Network) {
+    init(network: Networking) {
         self.network = network
     }
 

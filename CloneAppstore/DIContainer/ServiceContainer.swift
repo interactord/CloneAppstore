@@ -20,15 +20,15 @@ final class NetworkContainer: BaseContainer {
 
     private func register() {
 
-        container.register(Network.self) { _ in
-            let network = BaseNetwork()
+        container.register(Networking.self) { _ in
+            let network = Network()
             return network
         }.inObjectScope(.container)
 
-        container.register(ApiService.self) { resolver in
-            let network = resolver.resolve(Network.self)!
-            let apiService = BaseApiService(network: network)
-            return apiService
+        container.register(ApiProvider.self) { resolver in
+            let network = resolver.resolve(Networking.self)!
+            let apiProvider = ApiNetworkProvider(network: network)
+            return apiProvider
         }.inObjectScope(.container)
     }
 
