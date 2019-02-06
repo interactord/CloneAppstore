@@ -21,6 +21,7 @@ class CategoryCell: BaseCell {
         didSet {
             let bag = DisposeBag()
             guard let viewModel = viewModel else { return }
+
             nameLabel.text = viewModel.category.name
 
             viewModel.items
@@ -38,7 +39,7 @@ class CategoryCell: BaseCell {
                 .map { $0.viewModel?.app }
                 .ignoreNil()
                 .subscribe(onNext: { app in
-                     print ("did step call to \(type(of: self)): \(#function)")
+                    print ("did step call to \(type(of: self)): \(#function)")
                     self.parentViewController?.steps.accept(BaseStep.appDetail(app: app))
                 })
                 .disposed(by: bag)

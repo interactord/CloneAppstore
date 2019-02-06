@@ -40,8 +40,15 @@ extension DetailAppContainer: BaseContainer {
 extension DetailAppContainer {
     private func register() {
 
-        container.register(DetailAppViewController.self) { _ in
-            let viewController = DetailAppViewController()
+        container.register(DetailAppViewModeling.self) { resolver in
+            let service = resolver.resolve(Service.self)!
+            let viewModel = DetailAppViewModel(service: service)
+            return viewModel
+        }
+
+        container.register(DetailAppViewController.self) { resolver in
+            let viewModel = resolver.resolve(DetailAppViewModeling.self)!
+            let viewController = DetailAppViewController(viewModel: viewModel)
             return viewController
         }
     }

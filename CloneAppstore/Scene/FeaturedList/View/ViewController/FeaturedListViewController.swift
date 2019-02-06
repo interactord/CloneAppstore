@@ -20,10 +20,10 @@ class FeaturedListViewController: BaseViewController, Stepper {
 
     let baseView: FeaturedListCollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let collectionView = FeaturedListCollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.delegate = collectionView
-        collectionView.backgroundColor = .clear
-        return collectionView
+        let listView = FeaturedListCollectionView(frame: .zero, collectionViewLayout: layout)
+        listView.delegate = listView
+        listView.backgroundColor = .clear
+        return listView
     }()
 
     init(viewModel: FeaturedListViewModeling) {
@@ -55,7 +55,7 @@ class FeaturedListViewController: BaseViewController, Stepper {
         super.setupBindings()
 
         viewWillAppearTrigger
-            .bind(to: viewModel.startTrigger)
+            .bind(to: viewModel.startAction)
             .disposed(by: bag)
 
         viewModel.items

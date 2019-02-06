@@ -51,6 +51,9 @@
 		29D13B0A220B0F4A00B5A01A /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B09220B0F4A00B5A01A /* OptionalType.swift */; };
 		29D13B0C220B2AB200B5A01A /* DetailAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B0B220B2AB200B5A01A /* DetailAppViewController.swift */; };
 		29D13B0E220B2AE600B5A01A /* DetailAppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B0D220B2AE600B5A01A /* DetailAppContainer.swift */; };
+		29D13B18220B325900B5A01A /* DetailAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B17220B325900B5A01A /* DetailAppViewModel.swift */; };
+		29D13B1C220B35D500B5A01A /* AppDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B1B220B35D500B5A01A /* AppDetail.swift */; };
+		29D13B1E220B362100B5A01A /* AppInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D13B1D220B362100B5A01A /* AppInformation.swift */; };
 		2F2500DF4C6BE129F3F1DC80 /* Pods_CloneAppstore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641343721E87AD64B4EE272B /* Pods_CloneAppstore.framework */; };
 		7EE41EDF3BB45AFE53FC5691 /* Pods_CloneAppstoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8884212CF27879CB284D14 /* Pods_CloneAppstoreTests.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +118,9 @@
 		29D13B09220B0F4A00B5A01A /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 		29D13B0B220B2AB200B5A01A /* DetailAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppViewController.swift; sourceTree = "<group>"; };
 		29D13B0D220B2AE600B5A01A /* DetailAppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppContainer.swift; sourceTree = "<group>"; };
+		29D13B17220B325900B5A01A /* DetailAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppViewModel.swift; sourceTree = "<group>"; };
+		29D13B1B220B35D500B5A01A /* AppDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetail.swift; sourceTree = "<group>"; };
+		29D13B1D220B362100B5A01A /* AppInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInformation.swift; sourceTree = "<group>"; };
 		356DA156D95BAE20DF79425B /* Pods-CloneAppstore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneAppstore.debug.xcconfig"; path = "Target Support Files/Pods-CloneAppstore/Pods-CloneAppstore.debug.xcconfig"; sourceTree = "<group>"; };
 		641343721E87AD64B4EE272B /* Pods_CloneAppstore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneAppstore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8884212CF27879CB284D14 /* Pods_CloneAppstoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneAppstoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,14 +171,13 @@
 		290CC4A62208370A00C47C48 /* CloneAppstore */ = {
 			isa = PBXGroup;
 			children = (
+				29D13B11220B31EA00B5A01A /* Scene */,
 				290CC4A72208370A00C47C48 /* AppDelegate.swift */,
 				294F8B632208379800647810 /* DIContainer */,
 				29AB665B220AEBD10058E2BE /* Flow */,
 				294F8B5F2208375E00647810 /* Model */,
 				290CC4C72208371900C47C48 /* Resources */,
 				294F2C9C220885E300B037F2 /* Utility */,
-				294F8B602208376400647810 /* View */,
-				294F8B612208376800647810 /* ViewModel */,
 			);
 			path = CloneAppstore;
 			sourceTree = "<group>";
@@ -199,7 +204,6 @@
 		294F2C9222087E4D00B037F2 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				294F2C9522087E9F00B037F2 /* BaseCollectionView.swift */,
 				295CF8572209F85E00AF5B1A /* BannerListCollectionView.swift */,
 				294F2C9322087E6400B037F2 /* FeaturedListCollectionView.swift */,
 				294F2CA32208A9AD00B037F2 /* AppListCollectionView.swift */,
@@ -210,7 +214,6 @@
 		294F2C97220880E000B037F2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				294F2C9A220880FB00B037F2 /* BaseCell.swift */,
 				294F2CA92208B2B000B037F2 /* CategoryBannerCell.swift */,
 				294F2C98220880ED00B037F2 /* CategoryCell.swift */,
 				294F2CA52208AA0600B037F2 /* AppCell.swift */,
@@ -266,8 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				294F8B64220837FC00647810 /* FeaturedListViewController.swift */,
-				29D13B0B220B2AB200B5A01A /* DetailAppViewController.swift */,
-				294F8B662208384E00647810 /* BaseViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -289,6 +290,8 @@
 				294F8B7122083EA800647810 /* Featured.swift */,
 				294F8B7422083EEB00647810 /* Category.swift */,
 				294F8B7622083EF400647810 /* App.swift */,
+				29D13B1B220B35D500B5A01A /* AppDetail.swift */,
+				29D13B1D220B362100B5A01A /* AppInformation.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -372,6 +375,76 @@
 				29B691E8220864D500305311 /* NetworkMethod.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		29D13B11220B31EA00B5A01A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				29D13B19220B335100B5A01A /* Common */,
+				29D13B13220B321800B5A01A /* DetailApp */,
+				29D13B12220B31F700B5A01A /* FeaturedList */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		29D13B12220B31F700B5A01A /* FeaturedList */ = {
+			isa = PBXGroup;
+			children = (
+				294F8B612208376800647810 /* ViewModel */,
+				294F8B602208376400647810 /* View */,
+			);
+			path = FeaturedList;
+			sourceTree = "<group>";
+		};
+		29D13B13220B321800B5A01A /* DetailApp */ = {
+			isa = PBXGroup;
+			children = (
+				29D13B16220B324400B5A01A /* ViewModel */,
+				29D13B14220B321F00B5A01A /* View */,
+			);
+			path = DetailApp;
+			sourceTree = "<group>";
+		};
+		29D13B14220B321F00B5A01A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29D13B15220B322600B5A01A /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29D13B15220B322600B5A01A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29D13B0B220B2AB200B5A01A /* DetailAppViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		29D13B16220B324400B5A01A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				29D13B17220B325900B5A01A /* DetailAppViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		29D13B19220B335100B5A01A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				29D13B1A220B335700B5A01A /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		29D13B1A220B335700B5A01A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				294F2C9A220880FB00B037F2 /* BaseCell.swift */,
+				294F2C9522087E9F00B037F2 /* BaseCollectionView.swift */,
+				294F8B662208384E00647810 /* BaseViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CB097A5A578A653119D80791 /* Pods */ = {
@@ -651,11 +724,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D13B1C220B35D500B5A01A /* AppDetail.swift in Sources */,
 				29B691F322086A9100305311 /* FeaturedListViewModel.swift in Sources */,
 				294F2CA82208AA8600B037F2 /* AppCellModel.swift in Sources */,
 				295CF8542209F51E00AF5B1A /* BannerCell.swift in Sources */,
 				29AB6668220AFED90058E2BE /* FeaturedFlow.swift in Sources */,
 				29AB665F220AEC020058E2BE /* BaseStep.swift in Sources */,
+				29D13B18220B325900B5A01A /* DetailAppViewModel.swift in Sources */,
 				29AB6652220ACC970058E2BE /* ApiProvider.swift in Sources */,
 				29B691E9220864D500305311 /* NetworkMethod.swift in Sources */,
 				294F2CA42208A9AD00B037F2 /* AppListCollectionView.swift in Sources */,
@@ -683,6 +758,7 @@
 				294F2C99220880ED00B037F2 /* CategoryCell.swift in Sources */,
 				29D13B0A220B0F4A00B5A01A /* OptionalType.swift in Sources */,
 				29AB6655220ACDDD0058E2BE /* Service.swift in Sources */,
+				29D13B1E220B362100B5A01A /* AppInformation.swift in Sources */,
 				29D13B0E220B2AE600B5A01A /* DetailAppContainer.swift in Sources */,
 				294F8B7722083EF400647810 /* App.swift in Sources */,
 				294F8B672208384E00647810 /* BaseViewController.swift in Sources */,

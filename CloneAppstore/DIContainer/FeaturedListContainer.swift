@@ -40,7 +40,7 @@ extension FeaturedListContainer: BaseContainer {
 extension FeaturedListContainer {
     private func register() {
 
-        container.register(FeaturedListViewModel.self) { resolver in
+        container.register(FeaturedListViewModeling.self) { resolver in
 
             let service = resolver.resolve(Service.self)!
 
@@ -50,7 +50,7 @@ extension FeaturedListContainer {
             .inObjectScope(.container)
 
         container.register(FeaturedListViewController.self) { resolver in
-            let viewModel = resolver.resolve(FeaturedListViewModel.self)!
+            let viewModel = resolver.resolve(FeaturedListViewModeling.self)!
             let viewController = FeaturedListViewController.init(viewModel: viewModel)
             return viewController
         }

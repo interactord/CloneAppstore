@@ -16,6 +16,10 @@ extension UIViewController {
         return rx.sentMessage(selector).map { _ in () }.share(replay: 1)
     }
 
+    var viewDidLoadTrigger: Observable<Void> {
+        return trigger(selector: #selector(self.viewDidLoad))
+    }
+
     var viewWillAppearTrigger: Observable<Void> {
         return trigger(selector: #selector(self.viewWillAppear(_:)))
     }

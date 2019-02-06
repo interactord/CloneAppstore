@@ -11,29 +11,29 @@ import RxCocoa
 
 protocol FeaturedListViewModeling {
     // MARK: Input
-    var startTrigger: PublishSubject<Void> { get }
+    var startAction: PublishSubject<Void> { get }
 
     // MARK: Output
     var items: Observable<[FeaturedSectionModel]> { get }
-    var itemSelected: PublishRelay<App> { get }
 }
 
 class FeaturedListViewModel: FeaturedListViewModeling {
 
     // MARK: Input
-    let startTrigger = PublishSubject<Void>()
+    let startAction = PublishSubject<Void>()
 
     // MARK: Output
     var items: Observable<[FeaturedSectionModel]>
-    var itemSelected: PublishRelay<App>
+
+    // MARK: Injection type
+
     typealias Service = HasApiProvider
 
     // MARK: Initializer
     init(service: Service) {
 
-        let itemSelected = PublishRelay<App>()
-
-        let start = startTrigger
+        let start = startAction
+            .take(1)
             .flatMapLatest { _ in
                 service.apiProvider.getFeatureList()
             }
@@ -53,15 +53,5 @@ class FeaturedListViewModel: FeaturedListViewModeling {
 
                 return [bannerSection, categorySection]
         }
-
-        let bag = DisposeBag()
-        self.itemSelected = itemSelected
-        self.itemSelected.subscribe(onNext: { app in
-            print(app)
-        }, onError: { error in
-            print(error)
-        }, onCompleted: {
-            print("끝")
-        }).disposed(by: bag)
     }
 }
