@@ -34,9 +34,7 @@ class FeaturedListViewModel: FeaturedListViewModeling {
 
         let start = startAction
             .take(1)
-            .flatMapLatest { _ in
-                service.apiProvider.getFeatureList()
-            }
+            .flatMapLatest (service.apiProvider.getFeatureList())
             .observeOn(MainScheduler.instance)
             .share(replay: 1)
 

@@ -64,9 +64,10 @@ extension FeaturedFlow {
     }
 
     private func navigationToAppDetailList(app: App) -> FlowContributors {
-        let detailAppContainer = DetailAppContainer(container: container.getChild())
+        let detailAppContainer = AppDetailContainer(container: container.getChild())
 
-        let viewController: DetailAppViewController = detailAppContainer.getViewController()
+        let viewController: AppDetailViewController = detailAppContainer.getViewController()
+        viewController.app = app
         self.rootViewController.pushViewController(viewController, animated: true)
 
         let contributor = FlowContributor.contribute(

@@ -12,7 +12,7 @@ struct AppDetail {
     let id: Int // swiftlint:disable:this identifier_name
     let name: String
     let category: String
-    let price: String
+    let price: Double
     let imageName: String
     let screenShots: [String]
     let description: String

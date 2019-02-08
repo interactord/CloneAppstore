@@ -6,7 +6,7 @@
 //  Copyright © 2019 Scott Moon. All rights reserved.
 //
 
-import RxCocoa
+import Foundation
 
 protocol AppCellModeling {
     // MARK: Input

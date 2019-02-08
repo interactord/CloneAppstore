@@ -8,7 +8,7 @@
 
 import Swinject
 
-final class DetailAppContainer {
+final class AppDetailContainer {
     var container: Container
 
     // MARK: Initializer
@@ -21,7 +21,7 @@ final class DetailAppContainer {
 
 // MARK: BaseContainer
 
-extension DetailAppContainer: BaseContainer {
+extension AppDetailContainer: BaseContainer {
     func getChild() -> Container {
         return Container(parent: container)
     }
@@ -37,27 +37,27 @@ extension DetailAppContainer: BaseContainer {
 
 // MARK: Private
 
-extension DetailAppContainer {
+extension AppDetailContainer {
     private func register() {
 
-        container.register(DetailAppViewModeling.self) { resolver in
+        container.register(AppDetailViewModel.self) { resolver in
             let service = resolver.resolve(Service.self)!
-            let viewModel = DetailAppViewModel(service: service)
+            let viewModel = AppDetailViewModel(service: service)
             return viewModel
         }
 
-        container.register(DetailAppViewController.self) { resolver in
-            let viewModel = resolver.resolve(DetailAppViewModeling.self)!
-            let viewController = DetailAppViewController(viewModel: viewModel)
+        container.register(AppDetailViewController.self) { resolver in
+            let viewModel = resolver.resolve(AppDetailViewModel.self)!
+            let viewController = AppDetailViewController(viewModel: viewModel)
             return viewController
         }
     }
 }
 
 // MARK: Public
-extension DetailAppContainer {
-    func getViewController() -> DetailAppViewController {
-        let viewController = container.resolve(DetailAppViewController.self)!
+extension AppDetailContainer {
+    func getViewController() -> AppDetailViewController {
+        let viewController = container.resolve(AppDetailViewController.self)!
         return viewController
     }
 

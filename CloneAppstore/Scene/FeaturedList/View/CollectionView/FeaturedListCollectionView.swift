@@ -35,10 +35,10 @@ final class FeaturedListCollectionView: BaseCollectionView {
     lazy var configureCell: RxCollectionViewSectionedReloadDataSource<FeaturedSectionModel>.ConfigureCell = { [weak self] _, _, indexPath, item in
         guard let strongSelf = self else { return UICollectionViewCell() }
         switch item {
-        case .banner(let viewModel):
-            return strongSelf.bannerCell(indexPath: indexPath, viewModel: viewModel)
-        case .category(let viewModel):
-            return strongSelf.categoryCell(indexPath: indexPath, viewModel: viewModel)
+        case .banner(let cellModel):
+            return strongSelf.bannerCell(indexPath: indexPath, viewModel: cellModel)
+        case .category(let cellModel):
+            return strongSelf.categoryCell(indexPath: indexPath, viewModel: cellModel)
         }
     }
 
@@ -48,6 +48,8 @@ final class FeaturedListCollectionView: BaseCollectionView {
         register(BannerCell.self, forCellWithReuseIdentifier: largeBannerCellId)
     }
 }
+
+// MARK: Private
 
 extension FeaturedListCollectionView {
     private func categoryCell(indexPath: IndexPath, viewModel: CategoryCellModeling) -> UICollectionViewCell {

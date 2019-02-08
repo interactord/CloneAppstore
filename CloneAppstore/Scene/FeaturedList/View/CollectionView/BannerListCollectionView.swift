@@ -34,6 +34,7 @@ class BannerListCollectionView: BaseCollectionView {
     }
 
     override func registerCell() {
+        super.registerCell()
         register(LargeBannerCell.self, forCellWithReuseIdentifier: appBannerCellId)
     }
 
