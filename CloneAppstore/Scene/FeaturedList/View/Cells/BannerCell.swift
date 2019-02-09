@@ -13,19 +13,17 @@ import SnapKit
 
 class BannerCell: BaseCell {
 
-    private var bag: DisposeBag?
+    private let bag = DisposeBag()
 
     var viewModel: LargeBannerCellModeling? {
         didSet {
-            let bag = DisposeBag()
+
             guard let viewModel = viewModel else { return }
 
             viewModel.items
                 .asDriver()
                 .drive(baseView.rx.items(dataSource: baseView.source))
                 .disposed(by: bag)
-
-            self.bag = bag
         }
     }
 

@@ -60,7 +60,7 @@ extension AppFlow {
         let flow = FeaturedFlow(container: featuredListContainer)
 
         Flows.whenReady(flow1: flow) { [unowned self] root in
-            self.rootViewController.present(root, animated: true, completion: nil)
+            self.rootViewController.present(root, animated: false, completion: nil)
         }
 
         let contributor = FlowContributor.contribute(

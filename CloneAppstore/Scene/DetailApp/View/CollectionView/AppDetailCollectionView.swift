@@ -25,6 +25,8 @@ enum AppDetailItem {
 
 class AppDetailCollectionView: BaseCollectionView {
 
+    let bag = DisposeBag()
+
     let headCellId = "headCellId"
     let screenShotListCellId = "screenShotListCellIdId"
     let infomationCellId = "infomationCellId"
@@ -86,6 +88,14 @@ extension AppDetailCollectionView {
 
 extension AppDetailCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width, height: 200)
+
+        let item = source[indexPath]
+        switch item {
+        case .head, .screenShotList:
+            return CGSize(width: frame.width, height: 170)
+        case .information(let cellModel):
+            return AppDetailInfomationCell.getContentSize(width: frame.width, contents: cellModel.appDetail.description, marginBottom: 32)
+        }
+
     }
 }

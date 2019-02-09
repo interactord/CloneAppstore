@@ -15,7 +15,7 @@ protocol AppDetailScreenShotListCellModeling {
     var appDetail: AppDetail { get }
 
     // MARK: Output
-
+    var items: BehaviorRelay<[AppScreenShotSectionModel]> { get }
 }
 
 class AppDetailScreenShotListCellModel: AppDetailScreenShotListCellModeling {
@@ -25,10 +25,18 @@ class AppDetailScreenShotListCellModel: AppDetailScreenShotListCellModeling {
 
     // MARK: Output
 
-    let item = PublishRelay<AppDetailSectionModel>()
+    let items = BehaviorRelay<[AppScreenShotSectionModel]>(value: [])
 
     // MARK: Initializer
     init(appDetail: AppDetail) {
         self.appDetail = appDetail
+
+        let item = appDetail.screenShots.map { screenShot in
+            AppScreenShotItem.screenShot(cellModel: AppDetailScreenShotCellModel(imageName: screenShot))
+        }
+
+        let sectionModels = AppScreenShotSectionModel(model: .defaults, items: item)
+
+        items.accept([sectionModels])
     }
 }

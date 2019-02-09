@@ -53,7 +53,7 @@ extension FeaturedFlow {
         let viewController = container.getViewController()
         viewController.title = "Featured"
 
-        self.rootViewController.pushViewController(viewController, animated: true)
+        self.rootViewController.pushViewController(viewController, animated: false)
 
         let contributor = FlowContributor.contribute(
             withNextPresentable: viewController,

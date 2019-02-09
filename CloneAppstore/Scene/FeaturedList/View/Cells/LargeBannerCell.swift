@@ -6,12 +6,14 @@
 //  Copyright © 2019 Scott Moon. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class LargeBannerCell: CategoryBannerCell {
 
     override func setupViews() {
         super.setupViews()
+        imageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        imageView.layer.borderWidth = 0.5
         imageView.layer.cornerRadius = 0
     }
 
